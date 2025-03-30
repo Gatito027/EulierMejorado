@@ -14,12 +14,11 @@ def calcular():
     y = datos.get("valorY")
     x = datos.get("valorX")
     h = datos.get("valorH")
+    jsonres= {"n":"0","xn":"1","yn":"1","yreal":"1","error":"0"},{"n":"1","xn":"1","yn":"1","yreal":"1","error":"0"},{"n":"2","xn":"1","yn":"1","yreal":"1","error":"0"}
     # Validar que los datos existan
     if not datos:
         return jsonify({"error": "No se enviaron parámetros"}), 400
-    return jsonify({
-        "Void":"nada"
-    })
+    return jsonify(jsonres)
 
 
 
