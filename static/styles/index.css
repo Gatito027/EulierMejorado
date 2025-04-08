@@ -1,111 +1,129 @@
+/* Estilo general */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f9fc;
-    color: #333;
+    background: linear-gradient(120deg, #e0f7fa, #ffffff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-header {
-    background-color: #8e44ad;
-    color: #fff;
+
+/* Contenedor principal */
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Título principal */
+.titulo-principal {
+    font-weight: 700;
+    color: #0277bd;
     text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    font-size: 32px;
 }
-main.container {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-h1 {
-    margin: 0;
-    font-size: 24px;
-}
-p {
-    margin: 5px 0 20px;
-}
-h4 {
-    font-size: 18px;
+
+/* Subtítulo */
+.subtitulo {
+    color: #0288d1;
+    font-weight: 600;
+    margin-top: 50px;
     margin-bottom: 20px;
+    font-size: 22px;
 }
-.form-group {
-    margin-bottom: 20px;
-}
+
+/* Etiquetas de formulario */
 label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-weight: 600;
+    color: #37474f;
+    margin-bottom: 8px;
+    display: inline-block;
 }
-input[type="text"], input[type="number"] {
+
+/* Input de formulario */
+input[type="number"], input[type="text"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin: 10px 0 20px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
     box-sizing: border-box;
 }
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #8e44ad;
-    color: #fff;
-    font-size: 16px;
+
+/* Botón */
+button.btn-primary {
+    background-color: #039be5;
+    color: white;
     border: none;
-    border-radius: 5px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-button:hover {
-    background-color: #8e44ad;
-}
-#resultado {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
-table {
+button.btn-primary:hover {
+    background-color: #0277bd;
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+/* Tabla de resultados */
+.table {
+    margin-top: 15px;
+    font-size: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
-table th, table td {
-    border: 1px solid #ddd;
+.table thead {
+    background-color: #0288d1;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f1f9ff;
+}
+
+.table tbody tr:hover {
+    background-color: #e0f7fa;
+    transition: background-color 0.3s;
+}
+
+.table th, .table td {
     padding: 10px;
     text-align: center;
-    font-size: 14px;
+    border: 1px solid #ddd;
 }
 
-table th {
-    background-color: #8e44ad;
-    color: #fff;
-    font-weight: bold;
+/* Gráfica */
+canvas#grafica {
+    margin-top: 40px;
 }
 
-table tr:nth-child(even) {
-    background-color: #fdf7ff;
-}
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
 
-table tr:hover {
-    background-color: #f6e1ff;
-}
-.flex-container {
-    display: flex;
-    gap: 20px;
-}
+    .titulo-principal {
+        font-size: 26px;
+    }
 
-.form-section {
-    flex: 1;
-}
-
-#resultado {
-    flex: 1;
-    margin-top: 0; /* Elimina margen adicional si hay */
+    .subtitulo {
+        font-size: 18px;
+    }
 }

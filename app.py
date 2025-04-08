@@ -1,25 +1,30 @@
 from flask import Flask, render_template, request, jsonify
+from controllers.euler_controller import metodo_euler_mejorado, euler_mejorado, datos_grafica
 
 app = Flask(__name__)
 
 @app.route("/")
-def home():
-    return render_template("views/index.html")
+def index():
+    return render_template("index.html")
 
 @app.route("/calcular", methods=["POST"])
 def calcular():
-    # Obtener datos enviados en el cuerpo de la solicitud
-    datos = request.get_json()
-    ecuacion = datos.get("Ecuacion")
-    print(datos)
-    jsonres= {"n":"0","xn":"1","yn":"1","yreal":"1","error":"0"},{"n":"1","xn":"1","yn":"1","yreal":"1","error":"0"},{"n":"2","xn":"1","yn":"1","yreal":"1","error":"0"}
-    # Validar que los datos existan
-    if not datos:
-        return jsonify({"error": "No se enviaron parámetros"}), 400
-    return jsonify(jsonres)
+    data = request.json
+    ecuacion = data["ecuacion"]
+    x0 = float(data["x0"])
+    y0 = float(data["y0"])
+    h = float(data["h"])
+    n = int(data["n"])
 
+    resultados = metodo_euler_mejorado(ecuacion, x0, y0, h, n)
+    x_vals, y_aprox, y_exact, errores = euler_mejorado(x0, y0, h, n)
+    datos = datos_grafica(x_vals, y_aprox, y_exact)
 
-
+    return jsonify({
+        "tabla": resultados,
+        "grafica": datos
+    })
 
 if __name__ == "__main__":
     app.run(debug=True)
+

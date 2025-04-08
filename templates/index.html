@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Método de Euler Mejorado</title>
+    <link rel="stylesheet" href="/static/styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo-principal">Método de Euler Mejorado</h1>
+
+        <form id="formulario" class="formulario-container">
+            <label for="ecuacion">Ecuación dy/dx =</label>
+            <input type="text" id="ecuacion" value="x + y" required><br>
+
+            <label for="x0">x₀:</label>
+            <input type="number" id="x0" value="0" step="any" required>
+
+            <label for="y0">y₀:</label>
+            <input type="number" id="y0" value="1" step="any" required>
+
+            <label for="h">h (paso):</label>
+            <input type="number" id="h" value="0.1" step="any" required>
+
+            <label for="n">Iteraciones:</label>
+            <input type="number" id="n" value="10" required>
+
+            <button type="submit" class="btn-primary">Calcular</button>
+        </form>
+
+        <h2 class="subtitulo">Resultados</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>n</th>
+                    <th>xₙ</th>
+                    <th>yₙ</th>
+                    <th>y real</th>
+                    <th>Error</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-resultados"></tbody>
+        </table>
+
+        <canvas id="grafica" width="600" height="400"></canvas>
+    </div>
+
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>
