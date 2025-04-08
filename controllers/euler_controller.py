@@ -7,6 +7,10 @@ import os
 def f(x, y):
     return x + y
 
+def calcular_y_real(x):
+    y = math.exp(-0.2 + 0.2 * math.pow(x, 2))
+    return y
+
 def solucion_exacta(x, x0, y0):
     # Calculamos C
     C = (y0 + x0 + 1) * math.exp(-x0)
@@ -15,7 +19,7 @@ def solucion_exacta(x, x0, y0):
 def euler_mejorado(x0, y0, h, n):
     x_vals = [x0]
     y_vals = [y0]
-    y_exact_vals = [solucion_exacta(x0, x0, y0)]
+    y_exact_vals = [calcular_y_real(x0)]
     errores = [abs(y_vals[0] - y_exact_vals[0])]
 
     x = x0
@@ -27,7 +31,7 @@ def euler_mejorado(x0, y0, h, n):
         y = y + (h / 2) * (k1 + k2)
         x = x + h
 
-        y_real = solucion_exacta(x, x0, y0)
+        y_real = calcular_y_real(x)
         error_abs = abs(y - y_real)
 
         x_vals.append(x)
@@ -64,10 +68,18 @@ def metodo_euler_mejorado(ecuacion_str, x0, y0, h, n=10):
             yn_siguiente = yn + (h / 2) * (k1 + k2)
         except Exception as e:
             yn_siguiente = "Error"
-        
+
+        # Calcular yReal
         if isinstance(yn_siguiente, float):
-            y_real = "N/A"
-            error = "N/A"
+            y_real = calcular_y_real(xn)
+            error = abs(yn - y_real)
+        else:
+            y_real = "Error"
+            error = "Error"
+        
+        #if isinstance(yn_siguiente, float):
+        #    y_real = "N/A"
+        #    error = "N/A"
 
         resultados.append({
             "n": i,
