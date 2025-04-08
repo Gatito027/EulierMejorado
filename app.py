@@ -11,9 +11,7 @@ def calcular():
     # Obtener datos enviados en el cuerpo de la solicitud
     datos = request.get_json()
     ecuacion = datos.get("Ecuacion")
-    y = datos.get("valorY")
-    x = datos.get("valorX")
-    h = datos.get("valorH")
+    print(datos)
     jsonres= {"n":"0","xn":"1","yn":"1","yreal":"1","error":"0"},{"n":"1","xn":"1","yn":"1","yreal":"1","error":"0"},{"n":"2","xn":"1","yn":"1","yreal":"1","error":"0"}
     # Validar que los datos existan
     if not datos:
