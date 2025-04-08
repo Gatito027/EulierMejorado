@@ -127,3 +127,11 @@ canvas#grafica {
         font-size: 18px;
     }
 }
+
+/* Pestañas*/
+body { font-family: Arial, sans-serif; text-align: center; }
+        .tabs { display: flex; justify-content: center; margin-top: 20px; }
+        .tab-button { padding: 10px 20px; cursor: pointer; border: 1px solid #ccc; background: #f1f1f1; }
+        .tab-button:hover { background: #ddd; }
+        .tab-content { display: none; padding: 20px; border: 1px solid #ccc; margin-top: 10px; }
+        .active { display: block; }

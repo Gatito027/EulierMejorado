@@ -44,8 +44,53 @@
         </table>
 
         <canvas id="grafica" width="600" height="400"></canvas>
+
+        <h1 class="titulo-principal">Método de Euler Mejorado</h1>
+
+        <div class="tabs">
+            <button class="tab-button active-btn" onclick="openTab(event, 'info')">¿Qué hace la calculadora?</button>
+            <button class="tab-button" onclick="openTab(event, 'uso')">Cómo usar</button>
+            <button class="tab-button" onclick="openTab(event, 'extra')">Más detalles</button>
+        </div>
+
+        <div id="info" class="tab-content active">
+            <h2>¿Qué hace la calculadora?</h2>
+            <p>La Calculadora del Método de Euler Mejorado es una herramienta matemática
+                 diseñada para resolver ecuaciones diferenciales de manera aproximada
+                  utilizando un esquema de integración numérica más preciso que el método de Euler estándar.</p>
+
+            <h3>Fórmulas utilizadas:</h3>
+            <p>\( y_{n+1} = y_n + h \left( \frac{f(x_n, y_n) + f(x_{n+1}, y_{n+1})}{2} \right) \)</p>
+            <p>\( y_{n+1}^* = y_n + h f(x_n, y_n) \)</p>
+            <p>\( y_{real} = e^{-0.2 t + 0.2 x^2} \)</p>
+        </div>
+
+        <div id="uso" class="tab-content">
+            <h2>Cómo usar</h2>
+            <p>Introduce una ecuación, esta prodria ser:</p>
+            <p>\( f(x,y) = 0.4 x y \)</p>
+            <p>Despues introduce \( x_{inicial} \), \( y_{inicial} \), Crecimiento, Iteraciones deseadas</p>
+            <p>Pulsa calcular</p>
+            <p>Disfruta ᓚᘏᗢ</p>
+        </div>
+
+        <div id="extra" class="tab-content">
+            <h2>Más detalles</h2>
+            <p>Universidad Tecnológica de Tula-Tepeji</p>
+            <p>Carrera: Ingeniería en Desarrollo y Gestión de Software.</p>
+            <p>Creado por:</p>
+            <p>Norma Suyuri Gutierrez Cruz</p>
+            <p>Daniel Macedo Martinez</p>
+        </div>
     </div>
 
+    
+
     <script src="/static/js/scripts.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 </body>
 </html>

@@ -67,3 +67,18 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
         });
     });
 });
+//!Pestañas
+function openTab(event, tabName) {
+    var i, tabContent, tabButtons;
+    tabContent = document.querySelectorAll(".tab-content");
+    tabButtons = document.querySelectorAll(".tab-button");
+
+    tabContent.forEach(tab => tab.style.display = "none");
+    tabButtons.forEach(button => button.classList.remove("active-btn"));
+
+    document.getElementById(tabName).style.display = "block";
+    event.currentTarget.classList.add("active-btn");
+}
+
+// Mostrar el primer contenido por defecto
+document.getElementById("info").style.display = "block";
